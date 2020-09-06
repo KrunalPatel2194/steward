@@ -29,8 +29,8 @@ router.post('/', async (req, res) => {
         }
     } 
     catch(error) {
-        // console.error(error)
-        res.statusCode(500).send(config.get('default_responses.unexpectedError'));
+        console.error(error)
+        res.status(500).send(config.get('default_responses.unexpectedError'));
     }
 });
 
@@ -98,7 +98,7 @@ const validation = (req) => {
         Name : Joi.string().min(3).required(),
         isDeleted: Joi.bool().default(false),
         Description: Joi.string().min(10).max(100),
-        // categoryId: Joi.number().required(),
+        CategoryId: Joi.number().required(),
         Image: Joi.string(),
         Price: Joi.number().required(),
         isActive: Joi.bool().required(),

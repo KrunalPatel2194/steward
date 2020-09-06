@@ -13,6 +13,8 @@ const userTypes = require('./routes/usersTypes');
 const category = require('./routes/categories');
 // Menu Item routes
 const menuItems = require('./routes/menuItems');
+// Main Menu routes
+const mainMenu = require('./routes/mainMenu');
 
 const log = require('./logger');
 
@@ -37,7 +39,7 @@ app.use('/api/hotels',hotels);
 app.use('/api/usertypes',userTypes);
 app.use('/api/categories',category);
 app.use('/api/menuitems',menuItems);
-
+app.use('/api/getmenu',mainMenu);
 
 // PORT on which server is running
 const PORT = process.env.PORT || 5000;

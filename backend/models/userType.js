@@ -16,6 +16,6 @@ const UserType = sequelize.define('usertype', {
     });
     
     
-    UserType.sync({ force: true }) //User.sync({ force: true })
+    UserType.sync() //User.sync({ force: true })
 
 exports.UserType = UserType;

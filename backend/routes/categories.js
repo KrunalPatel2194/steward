@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
     } 
     catch(error) {
         // console.error(error)
-        res.statusCode(500).send(config.get('default_responses.unexpectedError'));
+        res.status(500).send(config.get('default_responses.unexpectedError'));
     }
 });
 

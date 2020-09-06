@@ -30,6 +30,6 @@ const Hotel = sequelize.define('hotel', {
     });
     
     
-    Hotel.sync({ force: true }) //Hotel.sync({ force: true })
+    Hotel.sync() //Hotel.sync({ force: true })
 
 exports.Hotel = Hotel;

@@ -3,6 +3,12 @@ const {Sequelize,sequelize} = require('../connect');
 const Category = require('../models/category');
 
 const MenuItem = sequelize.define('menuitem', {
+    // id: {
+    //     allowNull: false,
+    //     autoIncrement: true,
+    //     primaryKey: true,
+    //     type: Sequelize.INTEGER
+    //   },
     Name: {
         type: Sequelize.STRING,
         allowNull: false
@@ -17,10 +23,13 @@ const MenuItem = sequelize.define('menuitem', {
         type: Sequelize.FLOAT,
         allowNull: false
     },
-    // categoryId:{
-    //     type:Sequelize.NUMBER,
-    //     allowNull:false
-    // },
+    CategoryId :  {
+        type: Sequelize.INTEGER,
+        // references: {
+        //   modelName: 'Category',
+        //   key: 'id'
+        // }
+      },
     isActive:{
         type:Sequelize.BOOLEAN,
         defaultValue: Sequelize.BOOLEAN
@@ -29,11 +38,8 @@ const MenuItem = sequelize.define('menuitem', {
         type:Sequelize.BOOLEAN,
         defaultValue: Sequelize.BOOLEAN
     }
-    }, {
+    }, {});
     
-    // options
+    MenuItem.sync() //User.sync({ force: true })
     
-    });
-    MenuItem.sync({ force: true }) //User.sync({ force: true })
-
 exports.MenuItem = MenuItem;
