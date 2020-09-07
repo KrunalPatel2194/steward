@@ -1,4 +1,5 @@
 const config = require('config');
+const cors = require("cors");
 const morgan = require('morgan');
 const helmet = require('helmet');
 const express = require('express');
@@ -22,6 +23,7 @@ const log = require('./logger');
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.use(helmet());
 
 //Configuration
